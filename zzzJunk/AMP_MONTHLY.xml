@@ -1,0 +1,1426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entries>
+    <PriceType PriceTypeType="mAMP" 
+               FilingAgency="CMS" 
+               FilingPeriod="MONTHLY"
+               Description="Monthly Average Manufacturer Price VS"
+               PublishingPlugin="com.modeln.bp.gp.plugins.mamp.CMnMAMPPublishingPlugin_V1"
+               DataCacheMethod="CACHE"
+               ReportedResultType="NDC11" 
+               RollupToNDC9="true" 
+               ModelAware="true"
+               PluginVersionNumber="1"  
+               ResultsListName="mAMPV54">
+
+        <PriceTypeDataDependency DynamicEntryType="DataSourceConfig" WorksheetName="DIR" SumWorksheetName="DIRSum" DataSource="DIR" DataSourceName="Direct Sales" DataSourceType="DIRECT_SALES"
+                                 Description="Direct Sales" DataSelectionType="INVOICE" Period="MONTHLY" PeriodOffset="0"
+                                 CalcBasisColumns="ExternalLineRefId,TransactionTypeCode,ExternalTransactionDate,InvoiceDateSql,NDCNumber,ProductName,InvoiceQuantity,InvoiceUOM,InvoiceAmount,TotalInvoiceAmount,ReallocatedTotalInvoiceAmount,PromptPayDiscount,DiscountedTotalInvoiceAmount,CustomerNumber,CustomerName,CustomerCOT,ExternalLineLinkID"
+                                 DrilldownColumns="ExternalLineRefId,TransactionTypeCode,ExternalTransactionDate,InvoiceDateSql,NDCNumber,ProductName,InvoiceQuantity,InvoiceUOM,InvoiceAmount,TotalInvoiceAmount,PromptPayDiscount,DiscountedTotalInvoiceAmount,CustomerNumber,CustomerName,CustomerCOT"/>
+        <PriceTypeDataDependency DynamicEntryType="DataSourceConfig" WorksheetName="IND" SumWorksheetName="INDSum" DataSource="IND" DataSourceName="Indirect Sales" DataSourceType="INDIRECT_SALES"
+                                 Description="Indirect Sales" DataSelectionType="INVOICE" Period="MONTHLY" PeriodOffset="0"
+                                 CalcBasisColumns="ExternalLineRefId,TransactionTypeCode,ExternalTransactionDate,InvoiceDateSql,NDCNumber,ProductName,InvoiceQuantity,InvoiceUOM,InvoiceAmount,TotalInvoiceAmount,DistributorCostAmt,ReallocatedChrgbkAmt,WholesalerNumber,WholesalerName,CustomerNumber,CustomerName,ContractNumber,CustomerCOT,ExternalLineLinkID"
+                                 DrilldownColumns="ExternalLineRefId,TransactionTypeCode,ExternalTransactionDate,InvoiceDateSql,NDCNumber,ProductName,InvoiceQuantity,InvoiceUOM,InvoiceAmount,TotalInvoiceAmount,DistributorCostAmt,WholesalerNumber,WholesalerName,CustomerNumber,CustomerName,CustomerCOT,ContractNumber"/>
+        <PriceTypeDataDependency DynamicEntryType="DataSourceConfig" WorksheetName="CHB" SumWorksheetName="CHBSum" DataSource="CHB" DataSourceName="Chargebacks" DataSourceType="CHARGEBACKS"
+                                 Description="Chargebacks" DataSelectionType="INVOICE" Period="MONTHLY" PeriodOffset="0"
+                                 CalcBasisColumns="ExternalLineRefId,TransactionTypeCode,ExternalTransactionDate,NDCNumber,ProductName,InvoiceQuantity,InvoiceUOM,InvoiceAmount,PaidChgbkAmt,ReallocatedChrgbkAmt,WholesalerNumber,WholesalerName,CustomerNumber,CustomerName,ContractNumber,CustomerCOT,ExternalLineLinkID"
+                                 DrilldownColumns="ExternalLineRefId,TransactionTypeCode,ExternalTransactionDate,NDCNumber,ProductName,InvoiceQuantity,InvoiceUOM,InvoiceAmount,PaidChgbkAmt,WholesalerNumber,WholesalerName,CustomerNumber,CustomerName,CustomerCOT,ContractNumber"/>
+        <PriceTypeDataDependency DynamicEntryType="DataSourceConfig" WorksheetName="REB" SumWorksheetName="REBSum" DataSource="REB" DataSourceName="Rebates" DataSourceType="REBATES"
+                                 Description="Rebates" DataSelectionType="INVOICE" Period="MONTHLY" PeriodOffset="0"
+                                 CalcBasisColumns="ExternalLineRefId,TransactionTypeCode,ExternalTransactionDate,ExternalPaidDate,ExternalProcessDate,NDCNumber,ProductName,ContractNumber,InvoiceQuantity,InvoiceUOM,RebatePaymentAmt,ReallocatedRebateAmt,CustomerNumber,CustomerName,CustomerCOT,ExternalLineLinkID"
+                                 DrilldownColumns="ExternalLineRefId,TransactionTypeCode,ExternalTransactionDate,ExternalPaidDate,ExternalProcessDate,NDCNumber,ProductName,InvoiceQuantity,InvoiceUOM,RebatePaymentAmt,CustomerNumber,CustomerName,CustomerCOT,ContractNumber"/>
+        <PriceTypeDataDependency DynamicEntryType="DataSourceConfig" WorksheetName="XREB" SumWorksheetName="XREBSum" DataSource="XREB" DataSourceName="Excludable Rebates" DataSourceType="REBATES"
+                                 Description="Excluded Rebates" DataSelectionType="INVOICE" Period="MONTHLY" PeriodOffset="0"
+                                 CalcBasisColumns="ExternalLineRefId,TransactionTypeCode,ExternalTransactionDate,ExternalPaidDate,ExternalProcessDate,NDCNumber,ProductName,ContractNumber,InvoiceQuantity,InvoiceUOM,RebatePaymentAmt,ReallocatedRebateAmt,CustomerNumber,CustomerName,CustomerCOT,ExternalLineLinkID"
+                                 DrilldownColumns="ExternalLineRefId,TransactionTypeCode,ExternalTransactionDate,ExternalPaidDate,ExternalProcessDate,NDCNumber,ProductName,InvoiceQuantity,InvoiceUOM,RebatePaymentAmt,CustomerNumber,CustomerName,CustomerCOT,ContractNumber"/>
+        <PriceTypeDataDependency DynamicEntryType="DataSourceConfig" WorksheetName="CUS" SumWorksheetName="CUSSum" DataSource="CUS" DataSourceName="Financial Adjustments" DataSourceType="CUSTOM_SALES"
+                                 Description="Financial Adjustments" DataSelectionType="INVOICE" Period="MONTHLY" PeriodOffset="0"
+                                 CalcBasisColumns="ExternalLineRefId,TransactionTypeCode,ExternalTransactionDate,ExternalProcessDate,NDCNumber,ProductName,InvoiceQuantity,InvoiceUOM,FinancialAdjustmentAmount,CustomerNumber,CustomerName,CustomerCOT,ExternalLineLinkID"
+                                 DrilldownColumns="ExternalLineRefId,TransactionTypeCode,ExternalTransactionDate,ExternalProcessDate,NDCNumber,ProductName,InvoiceQuantity,InvoiceUOM,FinancialAdjustmentAmount,CustomerNumber,CustomerName,CustomerCOT"/>
+
+        <PriceTypeDataDependency DynamicEntryType="DataSourceConfig" WorksheetName="DIR_12M" SumWorksheetName="DIR_12MSum" DataSource="DIR_12M" DataSourceName="12 Month Direct Sales" DataSourceType="DIRECT_SALES"
+                                 Description="12 Month Direct Sales" DataSelectionType="INVOICE" Period="ANNUALLY" PeriodOffset="0"
+                             CalcBasisColumns="ExternalLineRefId,TransactionTypeCode,ExternalTransactionDate,InvoiceDateSql,NDCNumber,ProductName,InvoiceQuantity,InvoiceUOM,InvoiceAmount,TotalInvoiceAmount,ReallocatedTotalInvoiceAmount,PromptPayDiscount,DiscountedTotalInvoiceAmount,CustomerNumber,CustomerName,CustomerCOT,ExternalLineLinkID"
+                                 DrilldownColumns="ExternalLineRefId,TransactionTypeCode,ExternalTransactionDate,InvoiceDateSql,NDCNumber,ProductName,InvoiceQuantity,InvoiceUOM,InvoiceAmount,TotalInvoiceAmount,PromptPayDiscount,DiscountedTotalInvoiceAmount,CustomerNumber,CustomerName,CustomerCOT"/>
+        <PriceTypeDataDependency DynamicEntryType="DataSourceConfig" WorksheetName="IND_12M" SumWorksheetName="IND_12MSum" DataSource="IND_12M" DataSourceName="12 Month Indirect Sales" DataSourceType="INDIRECT_SALES"
+                                 Description="12 Month Indirect Sales" DataSelectionType="INVOICE" Period="ANNUALLY" PeriodOffset="0"
+                                 CalcBasisColumns="ExternalLineRefId,TransactionTypeCode,ExternalTransactionDate,InvoiceDateSql,NDCNumber,ProductName,InvoiceQuantity,InvoiceUOM,InvoiceAmount,TotalInvoiceAmount,DistributorCostAmt,ReallocatedChrgbkAmt,WholesalerNumber,WholesalerName,CustomerNumber,CustomerName,ContractNumber,CustomerCOT,ExternalLineLinkID"
+                                 DrilldownColumns="ExternalLineRefId,TransactionTypeCode,ExternalTransactionDate,InvoiceDateSql,NDCNumber,ProductName,InvoiceQuantity,InvoiceUOM,InvoiceAmount,TotalInvoiceAmount,DistributorCostAmt,WholesalerNumber,WholesalerName,CustomerNumber,CustomerName,CustomerCOT,ContractNumber"/>
+        <PriceTypeDataDependency DynamicEntryType="DataSourceConfig" WorksheetName="CHB_12M" SumWorksheetName="CHB_12MSum" DataSource="CHB_12M" DataSourceName="12 Month Chargebacks" DataSourceType="CHARGEBACKS"
+                                 Description="12 Month Chargebacks" DataSelectionType="INVOICE" Period="ANNUALLY" PeriodOffset="0"
+                                 CalcBasisColumns="ExternalLineRefId,TransactionTypeCode,ExternalTransactionDate,NDCNumber,ProductName,InvoiceQuantity,InvoiceUOM,InvoiceAmount,PaidChgbkAmt,ReallocatedChrgbkAmt,WholesalerNumber,WholesalerName,CustomerNumber,CustomerName,ContractNumber,CustomerCOT,ExternalLineLinkID"
+                                 DrilldownColumns="ExternalLineRefId,TransactionTypeCode,ExternalTransactionDate,NDCNumber,ProductName,InvoiceQuantity,InvoiceUOM,InvoiceAmount,PaidChgbkAmt,WholesalerNumber,WholesalerName,CustomerNumber,CustomerName,CustomerCOT,ContractNumber"/>
+        <PriceTypeDataDependency DynamicEntryType="DataSourceConfig" WorksheetName="REB_12M" SumWorksheetName="REB_12MSum" DataSource="REB_12M" DataSourceName="12 Month Rebates" DataSourceType="REBATES"
+                                 Description="12 Month Rebates" DataSelectionType="INVOICE" Period="ANNUALLY" PeriodOffset="0"
+                                 CalcBasisColumns="ExternalLineRefId,TransactionTypeCode,ExternalTransactionDate,ExternalPaidDate,ExternalProcessDate,NDCNumber,ProductName,ContractNumber,InvoiceQuantity,InvoiceUOM,RebatePaymentAmt,ReallocatedRebateAmt,CustomerNumber,CustomerName,CustomerCOT,ExternalLineLinkID"
+                                 DrilldownColumns="ExternalLineRefId,TransactionTypeCode,ExternalTransactionDate,ExternalPaidDate,ExternalProcessDate,NDCNumber,ProductName,InvoiceQuantity,InvoiceUOM,RebatePaymentAmt,CustomerNumber,CustomerName,CustomerCOT,ContractNumber"/>
+        <PriceTypeDataDependency DynamicEntryType="DataSourceConfig" WorksheetName="XREB_12M" SumWorksheetName="XREB_12MSum" DataSource="XREB_12M" DataSourceName="12 Month Excludable Rebates" DataSourceType="REBATES"
+                                 Description="12 Month Excluded Rebates" DataSelectionType="INVOICE" Period="ANNUALLY" PeriodOffset="0"
+                                 CalcBasisColumns="ExternalLineRefId,TransactionTypeCode,ExternalTransactionDate,ExternalPaidDate,ExternalProcessDate,NDCNumber,ProductName,ContractNumber,InvoiceQuantity,InvoiceUOM,RebatePaymentAmt,ReallocatedRebateAmt,CustomerNumber,CustomerName,CustomerCOT,ExternalLineLinkID"
+                                 DrilldownColumns="ExternalLineRefId,TransactionTypeCode,ExternalTransactionDate,ExternalPaidDate,ExternalProcessDate,NDCNumber,ProductName,InvoiceQuantity,InvoiceUOM,RebatePaymentAmt,CustomerNumber,CustomerName,CustomerCOT,ContractNumber"/>
+
+        <PriceTypeDataDependency DynamicEntryType="PriceCalcDependency" WorksheetName="priorMonthlyAMPList"
+                                 Name="Previous Monthly AMP" PriceTypeType="mAMP" Period="MONTHLY" PeriodOffset="-1"
+                                 StartDate="[$PeriodStart] - 1" EndDate="[$PeriodStart] - 1"/>
+        <PriceTypeDataDependency DynamicEntryType="PriceListDependency" WorksheetName="EndPeriodWACList"
+                                 Name="End Of Period WAC" PriceListType="WAC" Period="MONTHLY" PeriodOffset="0"
+                                 StartDate="[$PeriodEnd]" EndDate="[$PeriodEnd]"/>
+
+	  <DataSourcesFilter ImportAction="addModify" DataSources="CUS" DataSourceType="CUSTOM_SALES">
+		<Filter ImportAction="addModify" Anded="false" Description="Financial Adjustments" Enabled="true"
+			Handle="Financial Adjustments-465" Inclusionary="true" Name="Financial Adjustments">
+		   <DimExp3><![CDATA[
+			<logicalOp name="and">
+				 <logicalOp name="and">
+					 <comparisonOp name="eq">
+						<attribute direction="left" name="TX!CustomSaleType"/>
+						<embedded direction="right">
+							<constant sourceClass="com.modeln.bp.dw.sales.custom.CMnCustomSaleType" sourceType="Enum">CS.FINADJ</constant>
+						</embedded>
+						<property name="valueType">
+							<value sourceType="Class">com.modeln.bp.dw.sales.custom.CMnCustomSaleType</value>
+						</property>
+					 </comparisonOp>
+					 <property name="exclude">
+						  <value sourceType="boolean">false</value>
+					 </property>
+				 </logicalOp>
+			 </logicalOp>
+			]]></DimExp3>
+		  </Filter>
+	  </DataSourcesFilter>
+	  
+        <PriceCalcDef CalcPluginClass="com.modeln.bp.gp.plugins.CMnModelAwareCalcPlugin">
+            <NamedExpression Name="Product Filter" Description="Filter for New Products">
+				<Filter ImportAction="addModify" Handle="MAMP.NamedExpressionFilter" Name="MAMP Product Filter" Description="Filter for restricting products" Inclusionary="true" Enabled="true" Anded="false">
+					<DimExp4><![CDATA[
+<logicalOp name="or">
+    <comparisonOp name="contains">
+        <attribute direction="left" fgo="com.modeln.bp.gp.views.product.CMnGpProduct" name="NDC"/>
+        <jdbcPlaceHolderValue direction="right">
+            <constant sourceType="String">%%</constant>
+        </jdbcPlaceHolderValue>
+        <property name="inputType">
+            <value sourceType="Class">java.lang.String</value>
+        </property>
+        <property name="caseInsensitive">
+            <value sourceType="boolean">true</value>
+        </property>
+        <property name="returnType">
+            <value sourceType="Class">java.lang.Boolean</value>
+        </property>
+    </comparisonOp>
+    <property name="dimension">
+        <value sourceType="String">PRODUCT</value>
+    </property>
+</logicalOp>
+]]></DimExp4>
+                </Filter>
+            </NamedExpression>
+
+            <!-- Formula Rules -->
+            <PriceCalcRule ModelAware="true" ResultType="NDC9" PriceRuleConfig="ERROR" PriorityOrderNum="1" RulePluginClass="com.modeln.bp.gp.plugins.CMnModelAwarePriceCalcRulePlugin"
+                           tag="CalcPriceNotPositive" title="AMP Not Positive" description="Check for results that are not positive">
+                <Condition> <![CDATA[or(isblank(NDC9!calcprice), NDC9!calcprice <= 0)]]> </Condition>
+                <SuggestedValue><![CDATA[NDC9!amt9]]></SuggestedValue>
+            </PriceCalcRule>
+            <PriceCalcRule ModelAware="true" ResultType="NDC9" PriceRuleConfig="ERROR" PriorityOrderNum="2" RulePluginClass="com.modeln.bp.gp.plugins.CMnModelAwarePriceCalcRulePlugin"
+                           tag="UnitsNotPositive" title="Quantity Not Positive" description="Check for results that units are not positive">
+                <Condition> <![CDATA[or(isblank(NDC9!qty1), NDC9!qty1 <= 0)]]> </Condition>
+                <SuggestedValue><![CDATA[NDC9!amt9]]></SuggestedValue>
+            </PriceCalcRule>
+            <PriceCalcRule ModelAware="true" ResultType="NDC9" PriceRuleConfig="ERROR" PriorityOrderNum="3" RulePluginClass="com.modeln.bp.gp.plugins.CMnModelAwarePriceCalcRulePlugin"
+                           tag="CalcPriceGtPriceListLimit" title="AMP Greater than WAC" description="Check for a AMP which is greater than WAC">
+                <Condition><![CDATA[NDC9!calcprice  > EndPeriodWACListNDC9!amt]]></Condition>
+            </PriceCalcRule>
+            <PriceCalcRule ModelAware="true" ResultType="NDC9" PriceRuleConfig="ERROR" PriorityOrderNum="4" RulePluginClass="com.modeln.bp.gp.plugins.CMnModelAwarePriceCalcRulePlugin"
+                           tag="MissingDependency_AcquiredLastNDC9AMP_OrZero" title="Acquired Product last NDC9 AMP Missing Or Has Zero Value"
+                           description="Check for missing last acquired product NDC9 AMP is missing (or has zero value)">
+                <Condition> <![CDATA[and( NDC9!algorithm="AMP.TRANSFERRED",or(NDC9!calcprice = 0, isblank(NDC9!calcprice)) )]]> </Condition>
+            </PriceCalcRule>
+
+            <PriceCalcRule ModelAware="true" ResultType="NDC11" PriceRuleConfig="WARNING" PriorityOrderNum="1" RulePluginClass="com.modeln.bp.gp.plugins.CMnModelAwarePriceCalcRulePlugin"
+                           tag="CalcPriceNotPositive" title="AMP Not Positive" description="Check for results that are not positive">
+                <Condition> <![CDATA[or(isblank(NDC11!calcprice), NDC11!calcprice <= 0)]]> </Condition>
+                <SuggestedValue><![CDATA[NDC11!amt9]]></SuggestedValue>
+            </PriceCalcRule>
+            <PriceCalcRule ModelAware="true" ResultType="NDC11" PriceRuleConfig="WARNING" PriorityOrderNum="2" RulePluginClass="com.modeln.bp.gp.plugins.CMnModelAwarePriceCalcRulePlugin"
+                           tag="UnitsNotPositive" title="Quantity Not Positive" description="Check for results that units are not positive">
+                <Condition> <![CDATA[or(isblank(NDC11!qty1), NDC11!qty1 <= 0)]]> </Condition>
+                <SuggestedValue><![CDATA[NDC11!amt9]]></SuggestedValue>
+            </PriceCalcRule>
+            <PriceCalcRule ModelAware="true" ResultType="NDC11" PriceRuleConfig="WARNING" PriorityOrderNum="3" RulePluginClass="com.modeln.bp.gp.plugins.CMnModelAwarePriceCalcRulePlugin"
+                           tag="CalcPriceGtPriceListLimit" title="AMP Greater than WAC" description="Check for a AMP which is greater than WAC">
+                <Condition><![CDATA[NDC11!calcprice * NDC11Set!MedicaidUnitsPerPack > EndPeriodWACList!amt]]></Condition>
+            </PriceCalcRule>
+
+            <!-- Price Type Properties -->
+            <PriceTypeProp Name="AssumedPromptPayDiscount" Label="Assumed Prompt Pay Discount" Type="java.lang.Double" Value="0.0"/>
+        </PriceCalcDef>
+
+        <ProductLinkConfig EdgeType="AUTH_GEN" DirectionUsage="NOTUSED"/>
+        <ProductLinkConfig EdgeType="CUST_PACK" DirectionUsage="BIDIRECT"/>
+        <ProductLinkConfig EdgeType="RELABEL" DirectionUsage="BIDIRECT"/>
+        <Parameter name="LineStartDim">
+            <Value> <![CDATA[ ( to_char( to_date( mn_global_pkg.format_timestamp_withtz(mn_struct_line_item_ver.start_date,[$WorkbookTimezone],'yyyy-MM-dd'), 'YYYY-MM-DD') ,'yyyyMMdd') ) ]]></Value>
+        </Parameter>
+        <Parameter name="LineEndDim">
+            <Value><![CDATA[ ( to_char( to_date( mn_global_pkg.format_timestamp_withtz(mn_struct_line_item_ver.end_date,[$WorkbookTimezone],'yyyy-MM-dd'), 'YYYY-MM-DD') ,'yyyyMMdd') ) ]]></Value>
+        </Parameter>
+        <Parameter name="MarketEntryDate">
+            <Value><![CDATA[ ( to_date( mn_global_pkg.format_timestamp_withtz(base11.market_entry_date,'{workbook.effectiveTimezoneID}','yyyy-MM-dd'), 'YYYY-MM-DD') ) ]]></Value>
+        </Parameter>
+        <Parameter name="NDC11SetAMPProdSetSelect">
+            <Value><![CDATA[
+            select distinct base11.item_id as ndc11_id,
+              cm9.cat_map_id as ndc9_id, 
+              cm11.ndc as ndc11,     
+              cm9.ndc as ndc9, 
+              base11.medicaid_units_per_pack as medicaid_upp,
+              base11.acquired_amp as acquired_amp,              
+              base11.special_item_number as spl_item_num,
+              case base11.drug_category
+                  when 1 then 'S'
+                  when 2 then 'I'
+                  when 3 then 'N'
+              end as drug_category,
+              cmf.fld_value as gnr_brnd_type,
+            ]]></Value>
+        </Parameter>
+        <Parameter name="NDC11SetAMPProdSetFrom">
+            <Value><![CDATA[
+            from  mn_item_ver base11 
+              inner join mn_map_edge_ver me11to9 on (  
+                base11.item_id = me11to9.source_id  
+                AND me11to9.edge_type = 1 /* PART_OF */
+                AND me11to9.ver_start_date < [$DataCutoff]  
+                AND me11to9.ver_end_date >= [$DataCutoff] )  
+              inner join mn_cat_map_ver cm11 on (  
+                base11.item_id = cm11.cat_map_id  
+                AND cm11.ver_start_date < [$DataCutoff]  
+                AND cm11.ver_end_date >= [$DataCutoff])  
+              inner join mn_cat_map_ver cm9 on (  
+                me11to9.dest_id = cm9.cat_map_id  
+                AND cm9.ver_start_date < [$DataCutoff]  
+                AND cm9.ver_end_date >= [$DataCutoff])
+              left outer join mn_cat_map_field_ver cmf on (
+                cmf.cat_map_id = cm11.cat_map_id
+                AND cmf.ver_start_date < [$DataCutoff]
+                AND cmf.ver_end_date >= [$DataCutoff]
+                AND lower(cmf.fld_name) = 'genericbrandtype')    
+              where base11.ver_start_date < [$DataCutoff] 
+                    AND base11.ver_end_date >= [$DataCutoff] 
+                    AND [RC:MapItem:base11]
+                    AND [$ProductLife] > 0
+            ]]></Value>
+        </Parameter>
+        <Parameter name="ProductLife">
+            <Value><![CDATA[
+            ( [$PeriodEnd] - CAST( coalesce(base11.acquisition_date, base11.market_entry_date) AS DATE ) + 1 )
+           ]]></Value>
+        </Parameter>
+        <Parameter name="OneCalcPeriod">
+            <Value><![CDATA[
+            ( [$PeriodEnd] - [$PeriodStart] + 1 )
+            ]]></Value>
+        </Parameter>
+
+        <!-- DBWorksheets representing the data sources -->
+        <Worksheet DynamicEntryType="DBWorksheet" name="DIR">
+            <Column DynamicEntryType="DBColumn" name="itemId" dBColName="item_id" type="itemid" IsInternal="true">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="DBColumn" name="total_inv_amt" type="decimal"/>
+            <Column DynamicEntryType="DBColumn" name="inv_qty" type="decimal"/>
+            <Column DynamicEntryType="DBColumn" name="ppd" dBColName="coalesce(ppd,0)" type="decimal"/>
+        </Worksheet>
+        <Worksheet DynamicEntryType="DBWorksheet" name="DIR_12M">
+            <Column DynamicEntryType="DBColumn" name="itemId" dBColName="item_id" type="itemid" IsInternal="true">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="DBColumn" name="total_inv_amt" type="decimal"/>
+            <Column DynamicEntryType="DBColumn" name="inv_qty" type="decimal"/>
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="DBWorksheet" name="IND">
+            <Column DynamicEntryType="DBColumn" name="itemId" dBColName="item_id" type="itemid" IsInternal="true">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="DBColumn" type="decimal" name="inv_qty"/>
+            <Column DynamicEntryType="DBColumn" type="decimal" name="distr_cost_amt"/>
+        </Worksheet>
+        <Worksheet DynamicEntryType="DBWorksheet" name="IND_12M">
+            <Column DynamicEntryType="DBColumn" name="itemId" dBColName="item_id" type="itemid" IsInternal="true">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="DBColumn" type="decimal" name="inv_qty"/>
+            <Column DynamicEntryType="DBColumn" type="decimal" name="distr_cost_amt"/>
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="DBWorksheet" name="CHB">
+            <Column DynamicEntryType="DBColumn" name="itemId" dBColName="item_id" type="itemid" IsInternal="true">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="DBColumn" name="paid_chgbk_amt" type="decimal"/>
+        </Worksheet>
+        <Worksheet DynamicEntryType="DBWorksheet" name="CHB_12M">
+            <Column DynamicEntryType="DBColumn" name="itemId" dBColName="item_id" type="itemid" IsInternal="true">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="DBColumn" type="decimal" name="paid_chgbk_amt"/>
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="DBWorksheet" name="CUS">
+            <Column DynamicEntryType="DBColumn" name="itemId" dBColName="item_id" type="itemid" IsInternal="true">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="DBColumn" name="financial_adjustment_amt" type="decimal"/>
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="DBWorksheet" name="REB">
+            <Column DynamicEntryType="DBColumn" name="itemId" dBColName="item_id" type="itemid" IsInternal="true">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="DBColumn" name="rebate_payment_amt" type="decimal"/>
+        </Worksheet>
+        <Worksheet DynamicEntryType="DBWorksheet" name="REB_12M">
+            <Column DynamicEntryType="DBColumn" name="itemId" dBColName="item_id" type="itemid" IsInternal="true">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="DBColumn" type="decimal" name="rebate_payment_amt"/>
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="DBWorksheet" name="XREB">
+            <Column DynamicEntryType="DBColumn" name="itemId" dBColName="item_id" type="itemid" IsInternal="true">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="DBColumn" name="inv_qty" type="decimal"/>
+        </Worksheet>
+        <Worksheet DynamicEntryType="DBWorksheet" name="XREB_12M">
+            <Column DynamicEntryType="DBColumn" name="itemId" dBColName="item_id" type="itemid" IsInternal="true">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="DBColumn" type="decimal" name="inv_qty"/>
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="SQLWorksheet" name="priorMonthlyAMPList" description="Data dependency: Previous Monthly AMP" Ndc9LevelWorksheetName="priorMonthlyAMPListNDC9">
+            <Column DynamicEntryType="SQLColumn"  name="itemId" type="itemid" dbColumn="cat_obj_id">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="SQLColumn"  name="amt" displayName="Amount" type="decimal" dbColumn="amount"/>
+            <CalcFilter><![CDATA[ in(priorMonthlyAMPList!itemId, NDC11Set!itemId) ]]></CalcFilter>
+        </Worksheet>
+        <Worksheet DynamicEntryType="CalcWorksheet" name="priorMonthlyAMPListNDC9" drivingWorksheet="priorMonthlyAMPList">
+            <GroupingExpression>NDC11Set!NDC9Id</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="NDC9Id" displayName="NDC9 ID" type="integer">
+                <Dimension name="ndc9id"/>
+                <Expr>NDC11Set!NDC9Id</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>MAX(priorMonthlyAMPList!amt)</Expr>
+            </Column>
+        </Worksheet>
+        <Worksheet DynamicEntryType="SQLWorksheet" name="EndPeriodWACList" 
+                   description="Data Dependency: End Of Period WAC price list" 
+                   UsageType="DATA_SOURCE|VALIDATION" Ndc9LevelWorksheetName="EndPeriodWACListNDC9">
+            <Column DynamicEntryType="SQLColumn"  name="itemId" type="itemid" dbColumn="cat_obj_id">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="SQLColumn"  name="amt" displayName="Amount" type="decimal" dbColumn="amount"/>
+            <CalcFilter><![CDATA[ in(EndPeriodWACList!itemId, NDC11Set!itemId) ]]></CalcFilter>
+        </Worksheet>
+
+        <!-- The Begining Of Period WAC CalcWorksheet calculates
+              WAC based on the WAC price list -->
+         <!-- The BeginingWACList SQLWorksheet represents the Begining of period WAC list
+              calculation dependency -->
+         <Worksheet DynamicEntryType="SQLWorksheet" name="BeginingOfPeriodWACList">
+           <Query><![CDATA[
+             [$PriceListSelect]
+             [$PriceListFrom]
+               AND mn_struct_line_item_ver.start_date <= [$PeriodStartDateTz]
+               AND mn_struct_line_item_ver.end_date >= [$PeriodStartDateTz] )
+             [$PriceListWhere]
+               AND sdv.struct_doc_type = [$PriceListType]
+               AND mn_struct_line_item_ver.start_date <= [$PeriodStartDateTz]
+               AND mn_struct_line_item_ver.end_date >= [$PeriodStartDateTz]
+           ]]></Query>
+           <Column DynamicEntryType="SQLColumn" name="itemId" type="integer" dbColumn="cat_obj_id">
+             <Dimension name="itemId"/>
+           </Column>
+           <Column DynamicEntryType="SQLColumn" name="amt" type="decimal" dbColumn="base_price"/>
+         </Worksheet>
+
+         <Worksheet DynamicEntryType="CalcWorksheet" name="BOPWAC" drivingWorksheet="BeginingOfPeriodWACList"
+                    UsageType="DATA_SOURCE|VALIDATION" displayName="Begining Of Period WAC" description="Data Dependency: Begining Of Period WAC price"
+                    Ndc9LevelWorksheetName="BOPWACNDC9">
+             <GroupingExpression>BeginingOfPeriodWACList!itemId</GroupingExpression>
+             <Column DynamicEntryType="CalcColumn" name="itemID" type="integer">
+                 <Dimension name="itemId"/>
+                 <Expr>BeginingOfPeriodWACList!itemId</Expr>
+             </Column>
+             <Column DynamicEntryType="CalcColumn" name="amt" type="decimal" displayName="Amount">
+                 <Expr><![CDATA[
+                  max(BeginingOfPeriodWACList!amt)
+                        ]]></Expr>
+             </Column>
+         </Worksheet>
+
+        <Worksheet DynamicEntryType="CalcWorksheet" name="EndPeriodWACListNDC9" 
+                   description="Data Dependency: End Of Period WAC price list" 
+                   UsageType="VALIDATION" drivingWorksheet="EndPeriodWACList">
+            <GroupingExpression>origNDC9LinkNdC11!origNDC9Id</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="NDC9Id" displayName="NDC9 ID" type="integer">
+                <Dimension name="ndc9id"/>
+                <Expr>origNDC9LinkNdC11!origNDC9Id</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount Per Unit" type="decimal">
+                <Expr>MAX( if( NDC11Set!MedicaidUnitsPerPack != 0, EndPeriodWACList!amt / NDC11Set!MedicaidUnitsPerPack ) )</Expr>
+            </Column>
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="CalcWorksheet" name="BOPWACNDC9"
+                   description="Data Dependency: Begining Of Period WAC price"
+                   UsageType="FORMULA" drivingWorksheet="BOPWAC">
+            <GroupingExpression>origNDC9LinkNdC11!origNDC9Id</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="NDC9Id" displayName="NDC9 ID" type="integer">
+                <Dimension name="ndc9id"/>
+                <Expr>origNDC9LinkNdC11!origNDC9Id</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount Per Unit" type="decimal">
+                <Expr>MAX( if( NDC11Set!MedicaidUnitsPerPack != 0, BOPWAC!amt / NDC11Set!MedicaidUnitsPerPack ) )</Expr>
+            </Column>
+        </Worksheet>
+
+        <!-- The WACList SQLWorksheet represents the WAC list
+             calculation dependency -->
+        <Worksheet DynamicEntryType="SQLWorksheet" name="WACList">
+            <Query><![CDATA[
+            [$PriceListSelect],
+              CASE WHEN mn_struct_line_item_ver.start_date < [$PeriodStart]
+                  THEN (select date_dim_id from mn_date_dim where date_num=to_char([$PeriodStartDateTz],'yyyyMMdd'))
+                    ELSE (select date_dim_id from mn_date_dim where date_num=[$LineStartDim])
+              END as start_date,
+              CASE WHEN mn_struct_line_item_ver.end_date > [$PeriodEnd]
+                  THEN (select date_dim_id from mn_date_dim where date_num=to_char([$PeriodEndDateTz],'yyyyMMdd') )
+                     ELSE (select date_dim_id from mn_date_dim where date_num=[$LineEndDim])
+              END as end_date
+            [$PriceListFrom] 
+              AND mn_struct_line_item_ver.start_date <= [$PeriodEnd] 
+              AND mn_struct_line_item_ver.end_date >= [$PeriodStart] ) 
+            [$PriceListWhere]
+              AND sdv.struct_doc_type = [$PriceListType]
+              AND mn_struct_line_item_ver.start_date <= [$PeriodEnd] 
+              AND mn_struct_line_item_ver.end_date >= [$PeriodStart] 
+          ]]></Query>
+            <Column DynamicEntryType="SQLColumn" name="itemId" type="integer" dbColumn="cat_obj_id">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="SQLColumn" name="amt" type="decimal" dbColumn="base_price" displayName="Amount"/>
+            <Column DynamicEntryType="SQLColumn" name="start_date_dim" type="decimal" dbColumn="start_date"/>
+            <Column DynamicEntryType="SQLColumn" name="end_date_dim" type="decimal" dbColumn="end_date"/>
+        </Worksheet>
+
+        <!-- The minWAC CalcWorksheet calculates the Minimum WAC based on the WAC price list -->
+        <Worksheet DynamicEntryType="CalcWorksheet" name="minWAC" drivingWorksheet="WACList"
+                   UsageType="DATA_SOURCE|VALIDATION" displayName="Minimum WAC" description="Data Dependency: Minimum WAC price"
+                   Ndc9LevelWorksheetName="minWACNDC9">
+            <GroupingExpression>WACList!itemId</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemID" type="integer">
+                <Dimension name="itemId"/>
+                <Expr>WACList!itemId</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" type="decimal" displayName="Amount">
+                <Expr>min(WACList!amt)</Expr>
+            </Column>
+        </Worksheet>
+        <Worksheet DynamicEntryType="CalcWorksheet" name="minWACNDC9"
+                   description="Data Dependency: Minimum WAC price"
+                   UsageType="FORMULA" drivingWorksheet="minWAC">
+            <GroupingExpression>origNDC9LinkNdC11!origNDC9Id</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="NDC9Id" displayName="NDC9 ID" type="integer">
+                <Dimension name="ndc9id"/>
+                <Expr>origNDC9LinkNdC11!origNDC9Id</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount Per Unit" type="decimal">
+                <Expr>MIN( if( NDC11Set!MedicaidUnitsPerPack != 0, minWAC!amt / NDC11Set!MedicaidUnitsPerPack ) )</Expr>
+            </Column>
+        </Worksheet>
+
+        <!-- The DollarWWAC CalcWorksheet calculates the Dollar Weighted Average
+             WAC based on the WAC price list -->
+        <Worksheet DynamicEntryType="CalcWorksheet" name="DollarWWAC" drivingWorksheet="WACList"
+                   UsageType="DATA_SOURCE|VALIDATION" displayName="Weighted Average WAC" description="Data Dependency: Weighted Average WAC price" Ndc9LevelWorksheetName="DollarWWACNDC9">
+            <GroupingExpression>WACList!itemId</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemID" type="integer">
+                <Dimension name="itemId"/>
+                <Expr>WACList!itemId</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" type="decimal" displayName="Amount">
+                <Expr><![CDATA[sum(WACList!amt*(WACList!end_date_dim - WACList!start_date_dim + 1))
+                    /
+                   if( ( max(NDC11Set!daysActive) < ([$PeriodEndDateTz]-[$PeriodStartDateTz]) ),
+                         max(NDC11Set!daysActive),
+                         ([$PeriodEndDateTz]-[$PeriodStartDateTz]+1) )]]></Expr>
+            </Column>
+        </Worksheet>
+        <Worksheet DynamicEntryType="CalcWorksheet" name="DollarWWACNDC9"
+                   description="Data Dependency: Weighted Average WAC price"
+                   UsageType="FORMULA" drivingWorksheet="DollarWWAC">
+            <GroupingExpression>origNDC9LinkNdC11!origNDC9Id</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="NDC9Id" displayName="NDC9 ID" type="integer">
+                <Dimension name="ndc9id"/>
+                <Expr>origNDC9LinkNdC11!origNDC9Id</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount Per Unit" type="decimal">
+                <Expr>MAX( if( NDC11Set!MedicaidUnitsPerPack != 0, DollarWWAC!amt / NDC11Set!MedicaidUnitsPerPack ) )</Expr>
+            </Column>
+        </Worksheet>
+
+
+        <Worksheet DynamicEntryType="SQLWorksheet" name="ProductFilter">
+            <ParamFilter DynamicEntryType="NamedFilter" generateQuery="true" name="Product Filter"/>
+            <Query><![CDATA[
+            select distinct itm.item_id
+            from mn_item_ver itm
+            where itm.item_id in ([SQ:ProductFilter:])
+                  AND itm.ver_start_date < [$DataCutoff]
+                  AND itm.ver_end_date >= [$DataCutoff]
+                  AND [RC:MapItem:itm]
+                ]]></Query>
+            <Column DynamicEntryType="SQLColumn"  name="itemId" type="itemid" dbColumn="item_id">
+                <Dimension name="itemId"/>
+            </Column>
+        </Worksheet>
+        <Worksheet DynamicEntryType="SQLWorksheet" name="NDC11Set" persisted="true">
+            <Query><![CDATA[
+            [$NDC11SetAMPProdSetSelect]
+            ([$PeriodEndDateTz]- [$MarketEntryDate] + 1) as days_active
+            [$NDC11SetAMPProdSetFrom]
+            ]]></Query>
+            <Column DynamicEntryType="SQLColumn"  name="itemId" type="integer" dbColumn="ndc11_id">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="SQLColumn"  name="NDC9Id" type="integer" dbColumn="ndc9_id">
+                <Dimension name="ndc9id"/>
+            </Column>
+            <Column DynamicEntryType="SQLColumn" name="daysActive" type="integer" dbColumn="days_active"/>
+            <Column DynamicEntryType="SQLColumn"  name="MedicaidUnitsPerPack" displayName="CMS Units Per Pack" type="decimal" dbColumn="medicaid_upp"/>
+            <Column DynamicEntryType="SQLColumn"  name="SpecialItemNumber" displayName="Special Item Number" type="string" dbColumn="spl_item_num"/>
+            <Column DynamicEntryType="SQLColumn"  name="DrugCategory" displayName="Drug Category" type="string" dbColumn="drug_category"/>
+            <Column DynamicEntryType="SQLColumn"  name="GenericBrandType" displayName="Generic/Brand" type="string" dbColumn="gnr_brnd_type"/>
+        </Worksheet>
+        <Worksheet DynamicEntryType="SQLWorksheet" name="NDC11SetActive">
+            <Query><![CDATA[
+            [$NDC11SetAMPProdSetSelect]
+            '2.AMP.ACTIVE' as status
+            [$NDC11SetAMPProdSetFrom]
+                AND ( base11.shelf_life_exp_date is null  OR 
+                      base11.shelf_life_exp_date >=  [$PeriodStart] ) 
+                AND ( base11.divestiture_date is null  OR 
+                      base11.divestiture_date >=  [$PeriodStart] ) 
+                AND ( base11.pkg_size_intro_date is null  OR 
+                      base11.pkg_size_intro_date <= [$PeriodEndTimeStamp] )
+                AND ( [$ProductLife] >= [$OneCalcPeriod] OR ( [$ProductLife] < [$OneCalcPeriod] AND base11.acquisition_date is null ) )
+                AND ( base11.elig_medicaid = 1 and base11.elig_medicaid is not null)
+            ]]></Query>
+            <Column DynamicEntryType="SQLColumn"  name="itemId" type="integer" dbColumn="ndc11_id">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="SQLColumn"  name="NDC9Id" type="integer" dbColumn="ndc9_id">
+                <Dimension name="ndc9id"/>
+            </Column>
+            <Column DynamicEntryType="SQLColumn"  name="NDC11" type="string" dbColumn="ndc11"/>
+            <Column DynamicEntryType="SQLColumn"  name="NDC9" type="string" dbColumn="ndc9"/>
+            <Column DynamicEntryType="SQLColumn"  name="Status" type="string" dbColumn="status"/>
+            <Column DynamicEntryType="SQLColumn"  name="MedicaidUnitPerPack" displayName="CMS Units Per Pack" type="decimal" dbColumn="medicaid_upp"/>
+            <Column DynamicEntryType="SQLColumn"  name="AcquiredAMP" type="decimal" dbColumn="acquired_amp"/>
+            <Column DynamicEntryType="SQLColumn"  name="SpecialItemNumber" displayName="Special Item Number" type="string" dbColumn="spl_item_num"/>
+            <Column DynamicEntryType="SQLColumn"  name="DrugCategory" displayName="Drug Category" type="string" dbColumn="drug_category"/>
+            <Column DynamicEntryType="SQLColumn"  name="GenericBrandType" displayName="Generic/Brand" type="string" dbColumn="gnr_brnd_type"/>
+            <CalcFilter><![CDATA[in(NDC11SetActive!NDC9Id ,NDC11Set!NDC9Id)]]></CalcFilter>
+            <CalcFilter><![CDATA[ in( NDC11SetActive!itemId, ProductFilter!itemId ) ]]></CalcFilter>
+        </Worksheet>
+        <Worksheet DynamicEntryType="SQLWorksheet" name="NDC11SetTransferred">
+            <Query><![CDATA[
+            [$NDC11SetAMPProdSetSelect]
+            '4.AMP.TRANSFERRED' as status
+            [$NDC11SetAMPProdSetFrom]
+                AND ( base11.shelf_life_exp_date is null  OR 
+                      base11.shelf_life_exp_date >=  [$PeriodStart] ) 
+                AND ( base11.divestiture_date is null  OR 
+                      base11.divestiture_date >=  [$PeriodStart] ) 
+                AND ( base11.pkg_size_intro_date is null  OR 
+                      base11.pkg_size_intro_date <= [$PeriodEndTimeStamp] )
+                /* product acquired with product life between 0 and 1 month */
+                AND ( [$ProductLife] < [$OneCalcPeriod] AND base11.acquisition_date is not null )
+                AND ( base11.elig_medicaid = 1 and base11.elig_medicaid is not null)
+            ]]></Query>
+            <Column DynamicEntryType="SQLColumn"  name="itemId" type="integer" dbColumn="ndc11_id">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="SQLColumn"  name="NDC9Id" type="integer" dbColumn="ndc9_id">
+                <Dimension name="ndc9id"/>
+            </Column>
+            <Column DynamicEntryType="SQLColumn"  name="NDC11" type="string" dbColumn="ndc11"/>
+            <Column DynamicEntryType="SQLColumn"  name="NDC9" type="string" dbColumn="ndc9"/>
+            <Column DynamicEntryType="SQLColumn"  name="Status" type="string" dbColumn="status"/>
+            <Column DynamicEntryType="SQLColumn"  name="MedicaidUnitPerPack" displayName="CMS Units Per Pack" type="decimal" dbColumn="medicaid_upp"/>
+            <Column DynamicEntryType="SQLColumn"  name="AcquiredAMP" type="decimal" dbColumn="acquired_amp"/>
+            <Column DynamicEntryType="SQLColumn"  name="SpecialItemNumber" displayName="Special Item Number" type="string" dbColumn="spl_item_num"/>
+            <Column DynamicEntryType="SQLColumn"  name="DrugCategory" displayName="Drug Category" type="string" dbColumn="drug_category"/>
+            <Column DynamicEntryType="SQLColumn"  name="GenericBrandType" displayName="Generic/Brand" type="string" dbColumn="gnr_brnd_type"/>
+            <CalcFilter><![CDATA[ in( NDC11SetTransferred!NDC9Id, NDC11Set!NDC9Id ) ]]></CalcFilter>
+            <CalcFilter><![CDATA[ in( NDC11SetTransferred!itemId, ProductFilter!itemId ) ]]></CalcFilter>
+            <CalcFilter><![CDATA[ not(in( NDC11SetTransferred!NDC9Id, NDC11SetActive!NDC9Id )) ]]></CalcFilter>
+            <CalcFilter><![CDATA[ not(in( NDC11SetTransferred!NDC9Id, NDC11SetExpired!NDC9Id )) ]]></CalcFilter>
+        </Worksheet>
+        <Worksheet DynamicEntryType="SQLWorksheet" name="NDC11SetExpired">
+            <Query><![CDATA[
+            [$NDC11SetAMPProdSetSelect]
+            '3.AMP.TERMINATED' AS status
+            [$NDC11SetAMPProdSetFrom]
+                AND ( base11.shelf_life_exp_date >=  ADD_MONTHS([$PeriodStart], -12) )
+                AND (base11.shelf_life_exp_date < [$PeriodStart])
+                AND ( base11.divestiture_date is null  OR 
+                      base11.divestiture_date >=  [$PeriodStart] ) 
+                AND ( base11.pkg_size_intro_date is null  OR 
+                      base11.pkg_size_intro_date <= [$PeriodEndTimeStamp] )
+                AND ( base11.elig_medicaid = 1 and base11.elig_medicaid is not null)
+            ]]></Query>
+            <Column DynamicEntryType="SQLColumn"  name="itemId" type="integer" dbColumn="ndc11_id">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="SQLColumn"  name="NDC9Id" type="integer" dbColumn="ndc9_id">
+                <Dimension name="ndc9id"/>
+            </Column>
+            <Column DynamicEntryType="SQLColumn"  name="NDC11" type="string" dbColumn="ndc11"/>
+            <Column DynamicEntryType="SQLColumn"  name="NDC9" type="string" dbColumn="ndc9"/>
+            <Column DynamicEntryType="SQLColumn"  name="Status" type="string" dbColumn="status"/>
+            <Column DynamicEntryType="SQLColumn"  name="MedicaidUnitPerPack" displayName="CMS Units Per Pack" type="decimal" dbColumn="medicaid_upp"/>
+            <Column DynamicEntryType="SQLColumn"  name="AcquiredAMP" type="decimal" dbColumn="acquired_amp"/>
+            <Column DynamicEntryType="SQLColumn"  name="SpecialItemNumber" displayName="Special Item Number" type="string" dbColumn="spl_item_num"/>
+            <Column DynamicEntryType="SQLColumn"  name="DrugCategory" displayName="Drug Category" type="string" dbColumn="drug_category"/>
+            <Column DynamicEntryType="SQLColumn"  name="GenericBrandType" displayName="Generic/Brand" type="string" dbColumn="gnr_brnd_type"/>
+            <CalcFilter><![CDATA[ in( NDC11SetExpired!itemId, ProductFilter!itemId ) ]]></CalcFilter>
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="UnionWorksheet" name="NDC11SetAMPAlgorithm" Ndc9LevelWorksheetName="NDC9SetAMPAlgorithm" distinct="true">
+            <Column DynamicEntryType="UnionColumn" name="itemId" type="integer">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="UnionColumn" name="NDC9Id" type="integer">
+                <Dimension name="ndc9id"/>
+            </Column>
+            <Column DynamicEntryType="UnionColumn" name="NDC11" type="string"/>
+            <Column DynamicEntryType="UnionColumn" name="NDC9" type="string"/>
+            <Column DynamicEntryType="UnionColumn" name="Status" displayName="Product Set Algorithm" type="string"/>
+            <Column DynamicEntryType="UnionColumn" name="MedicaidUnitPerPack" displayName="CMS Units Per Pack" type="decimal"/>
+            <Column DynamicEntryType="UnionColumn" name="AcquiredAMP" displayName="Acquired AMP" type="decimal"/>
+            <Column DynamicEntryType="UnionColumn" name="SpecialItemNumber" displayName="Special Item Number" type="string"/>
+            <Column DynamicEntryType="UnionColumn" name="DrugCategory" displayName="Drug Category" type="string"/>
+            <Column DynamicEntryType="UnionColumn" name="GenericBrandType" displayName="Generic/Brand" type="string"/>
+            <SubWorksheet name="NDC11SetActive">
+                <Column DynamicEntryType="SubColumn" name="itemId"/>
+                <Column DynamicEntryType="SubColumn" name="NDC9Id"/>
+                <Column DynamicEntryType="SubColumn" name="NDC11"/>
+                <Column DynamicEntryType="SubColumn" name="NDC9"/>
+                <Column DynamicEntryType="SubColumn" name="Status"/>
+                <Column DynamicEntryType="SubColumn" name="MedicaidUnitPerPack"/>
+                <Column DynamicEntryType="SubColumn" name="AcquiredAMP"/>
+                <Column DynamicEntryType="SubColumn" name="SpecialItemNumber"/>
+                <Column DynamicEntryType="SubColumn" name="DrugCategory"/>
+                <Column DynamicEntryType="SubColumn" name="GenericBrandType"/>
+            </SubWorksheet>
+            <SubWorksheet name="NDC11SetExpired">
+                <Column DynamicEntryType="SubColumn" name="itemId"/>
+                <Column DynamicEntryType="SubColumn" name="NDC9Id"/>
+                <Column DynamicEntryType="SubColumn" name="NDC11"/>
+                <Column DynamicEntryType="SubColumn" name="NDC9"/>
+                <Column DynamicEntryType="SubColumn" name="Status"/>
+                <Column DynamicEntryType="SubColumn" name="MedicaidUnitPerPack"/>
+                <Column DynamicEntryType="SubColumn" name="AcquiredAMP"/>
+                <Column DynamicEntryType="SubColumn" name="SpecialItemNumber"/>
+                <Column DynamicEntryType="SubColumn" name="DrugCategory"/>
+                <Column DynamicEntryType="SubColumn" name="GenericBrandType"/>
+            </SubWorksheet>
+            <SubWorksheet name="NDC11SetTransferred">
+                <Column DynamicEntryType="SubColumn" name="itemId"/>
+                <Column DynamicEntryType="SubColumn" name="NDC9Id"/>
+                <Column DynamicEntryType="SubColumn" name="NDC11"/>
+                <Column DynamicEntryType="SubColumn" name="NDC9"/>
+                <Column DynamicEntryType="SubColumn" name="Status"/>
+                <Column DynamicEntryType="SubColumn" name="MedicaidUnitPerPack"/>
+                <Column DynamicEntryType="SubColumn" name="AcquiredAMP"/>
+                <Column DynamicEntryType="SubColumn" name="SpecialItemNumber"/>
+                <Column DynamicEntryType="SubColumn" name="DrugCategory"/>
+                <Column DynamicEntryType="SubColumn" name="GenericBrandType"/>
+            </SubWorksheet>
+        </Worksheet>
+        <Worksheet DynamicEntryType="CalcWorksheet" name="NDC9SetAMPAlgorithm" UsageType="FORMULA" displayName="Product Information" drivingWorksheet="NDC11SetAMPAlgorithm">
+            <GroupingExpression>NDC11SetAMPAlgorithm!NDC9Id</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="ndc9id"/>
+                <Expr>NDC11SetAMPAlgorithm!NDC9Id</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="ndc9" displayName="NDC9" type="string">
+                <Expr>max(NDC11SetAMPAlgorithm!NDC9)</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="Status" displayName="Algorithm" description="Product algorithm: AMP.TERMINATED, AMP.ACTIVE, AMP.TRANSFERRED" type="string">
+                <Expr>if(min(NDC11SetAMPAlgorithm!Status)="3.AMP.TERMINATED", "AMP.TERMINATED",
+                      if(min(NDC11SetAMPAlgorithm!Status)="2.AMP.ACTIVE", "AMP.ACTIVE",
+                      if(min(NDC11SetAMPAlgorithm!Status)="4.AMP.TRANSFERRED", "AMP.TRANSFERRED" )))
+                </Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="AcquiredAMP" displayName="Acquired AMP" type="decimal">
+                <Expr>max(NDC11SetAMPAlgorithm!AcquiredAMP)</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="SpecialItemNumber" displayName="Special Item Number" type="string">
+                <Expr>max(NDC11SetAMPAlgorithm!SpecialItemNumber)</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="DrugCategory" displayName="Drug Category" type="string" description="Drug Category: S, I, N">
+                <Expr>if(max(NDC11SetAMPAlgorithm!DrugCategory)="S", "S",
+                      if(max(NDC11SetAMPAlgorithm!DrugCategory)="I", "I",
+                      if(max(NDC11SetAMPAlgorithm!DrugCategory)="N", "N" )))
+                </Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="GenericBrandType" displayName="Generic/Brand" type="string" description="Generic/Brand: GNR, BRND">
+                <Expr>max(NDC11SetAMPAlgorithm!GenericBrandType)</Expr>
+            </Column>
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="CalcWorksheet" name="NDC11sWithWorksheetName" drivingWorksheet="NDC11SetAll">
+            <Column DynamicEntryType="CalcColumn" name="originalProdId" type="integer">
+                <Dimension name="itemId"/>
+                <Expr>NDC11SetAll!itemId</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="origNDC9Id" type="integer">
+                <Expr>NDC11SetAll!NDC9Id</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="linkedNDC9Id" type="integer">
+                <Dimension name="linkedNDC9Id"/>
+                <Expr>NDC11SetAll!NDC9Id</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="MedicaidUnitPerPack" type="decimal">
+                <Expr>NDC11SetAll!MedicaidUnitPerPack</Expr>
+            </Column>
+        </Worksheet>
+        <Worksheet DynamicEntryType="SQLWorksheet" name="LinkedNDC11s" persisted="true">
+            <ParamFilter DynamicEntryType="NamedFilter"  generateQuery="true" name="Product Filter"/>
+            <Query><![CDATA[
+            ${com.modeln.IntermediateResult.query.LinkedNDC11s}
+            ]]></Query>
+            <!-- 
+              WARNING: these 4 item ID columns have to stay as integer and in this order, 
+              since CMnWorkbookResultLineExtn.getLinkedProductsQuery() assumes 
+              these are columns int1, int2, int3, int4
+            -->
+            <Column DynamicEntryType="SQLColumn"  name="originalProdId" type="integer" dbColumn="origProdId">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="SQLColumn"  name="linkedItemId" type="integer" dbColumn="linkedItemId">
+                <Dimension name="linkedItemId"/>
+            </Column>
+            <Column DynamicEntryType="SQLColumn"  name="origNDC9Id" type="integer" dbColumn="origNDC9Id"/>
+            <Column DynamicEntryType="SQLColumn"  name="linkedNDC9Id" type="integer" dbColumn="linkedNDC9Id">
+                <Dimension name="linkedNDC9Id"/>
+            </Column>
+            <Column DynamicEntryType="SQLColumn"  name="worksheetName" type="worksheetname" dbColumn="wsName"/>
+            <CalcFilter><![CDATA[in(LinkedNDC11s!originalProdId ,NDC11sWithWorksheetName!originalProdId)]]></CalcFilter>
+        </Worksheet>
+        <Worksheet DynamicEntryType="UnionWorksheet" name="origNDC9LinkNDC9" distinct="true">
+            <Column DynamicEntryType="UnionColumn" name="origNDC9Id" type="integer">
+            </Column>
+            <Column DynamicEntryType="UnionColumn" name="linkedNDC9Id" type="integer">
+                <Dimension name="ndc9id"/>
+            </Column>
+            <SubWorksheet name="NDC11sWithWorksheetName">
+                <Column DynamicEntryType="SubColumn" name="origNDC9Id"/>
+                <Column DynamicEntryType="SubColumn" name="linkedNDC9Id"/>
+            </SubWorksheet>
+            <SubWorksheet name="LinkedNDC11s">
+                <Column DynamicEntryType="SubColumn" name="origNDC9Id"/>
+                <Column DynamicEntryType="SubColumn" name="linkedNDC9Id"/>
+            </SubWorksheet>
+        </Worksheet>
+        <Worksheet DynamicEntryType="SQLWorksheet" name="NotReportedNDC11s">
+            <Query><![CDATA[
+            select base11.item_id as ndc11_id, me11to9.dest_id as ndc9_id, base11.medicaid_units_per_pack as medicaid_upp
+            from mn_item_ver base11 
+                inner join mn_map_edge_ver me11to9 on (  
+                  base11.item_id = me11to9.source_id  
+                  AND me11to9.edge_type = 1 /* PART_OF */
+                  AND me11to9.ver_start_date < [$DataCutoff]  
+                  AND me11to9.ver_end_date >= [$DataCutoff] )
+            where
+              base11.ver_start_date < [$DataCutoff] 
+              AND base11.ver_end_date >= [$DataCutoff] 
+              AND [RC:MapItem:base11]
+            ]]></Query>
+            <Column DynamicEntryType="SQLColumn"  name="itemId" type="integer" dbColumn="ndc11_id">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="SQLColumn"  name="NDC9Id" type="integer" dbColumn="ndc9_id">
+                <Dimension name="ndc9id"/>
+            </Column>
+            <Column DynamicEntryType="SQLColumn"  name="MedicaidUnitPerPack" displayName="CMS Units Per Pack" type="decimal" dbColumn="medicaid_upp"/>
+            <CalcFilter><![CDATA[not(in(NotReportedNDC11s!NDC9Id, NDC11sWithWorksheetName!linkedNDC9Id)) ]]></CalcFilter>
+            <CalcFilter><![CDATA[in(NotReportedNDC11s!NDC9Id, origNDC9LinkNDC9!linkedNDC9Id) ]]></CalcFilter>
+        </Worksheet>
+        <Worksheet DynamicEntryType="UnionWorksheet" name="AllNDC11s" distinct="true">
+            <Column DynamicEntryType="UnionColumn" name="itemId" type="integer">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="UnionColumn" name="NDC9Id" type="integer">
+                <Dimension name="ndc9id"/>
+            </Column>
+            <Column DynamicEntryType="UnionColumn" name="MedicaidUnitPerPack" type="decimal"/>
+            <SubWorksheet name="NDC11sWithWorksheetName">
+                <Column DynamicEntryType="SubColumn" name="originalProdId"/>
+                <Column DynamicEntryType="SubColumn" name="origNDC9Id"/>
+                <Column DynamicEntryType="SubColumn" name="MedicaidUnitPerPack"/>
+            </SubWorksheet>
+            <SubWorksheet name="NotReportedNDC11s">
+                <Column DynamicEntryType="SubColumn" name="itemId"/>
+                <Column DynamicEntryType="SubColumn" name="NDC9Id"/>
+                <Column DynamicEntryType="SubColumn" name="MedicaidUnitPerPack"/>
+            </SubWorksheet>
+        </Worksheet>
+        <Worksheet DynamicEntryType="CalcWorksheet" name="origNDC9LinkNDC11" drivingWorksheet="origNDC9LinkNDC9">
+            <Column DynamicEntryType="CalcColumn" name="origNDC9Id" type="integer">
+                <Expr>origNDC9LinkNDC9!origNDC9Id</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="linkedItemId" displayName="Linked Item ID" type="integer">
+                <Dimension name="itemId"/>
+                <Expr>AllNDC11s!itemId</Expr>
+            </Column>
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="CalcWorksheet" name="DIRSum" drivingWorksheet="DIR" Ndc9LevelWorksheetName="DIRNDC9Sum">
+            <GroupingExpression>DIR!itemId</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="itemId"/>
+                <Expr>DIR!itemId</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>sum(DIR!total_inv_amt)</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="ppAmt" displayName="Prompt Pay Amount" type="decimal">
+                <Expr>sum(DIR!ppd * DIR!total_inv_amt)</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="inv_qty" displayName="Quantity" type="decimal">
+                <Expr>sum(DIR!inv_qty*NDC11Set!MedicaidUnitsPerPack)</Expr>
+            </Column>
+        </Worksheet>
+        <Worksheet DynamicEntryType="CalcWorksheet" name="DIRNDC9Sum" UsageType="FORMULA" drivingWorksheet="origNDC9LinkNDC11">
+            <GroupingExpression>origNDC9LinkNDC11!origNDC9Id</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="ndc9id"/>
+                <Expr>origNDC9LinkNDC11!origNDC9Id</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>sum(DIRSum!amt)</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="ppAmt" displayName="Prompt Pay Amount" type="decimal">
+                <Expr>sum(DIRSum!ppAmt)</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="inv_qty" displayName="Quantity" type="decimal">
+                <Expr>sum(DIRSum!inv_qty)</Expr>
+            </Column>
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="CalcWorksheet" name="DIR_12MSum" drivingWorksheet="DIR_12M" Ndc9LevelWorksheetName="DIR_12MNDC9Sum">
+            <GroupingExpression>DIR_12M!itemId</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="itemId"/>
+                <Expr>DIR_12M!itemId</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>sum(DIR_12M!total_inv_amt)</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="inv_qty" displayName="Quantity" type="decimal">
+                <Expr>sum(DIR_12M!inv_qty*NDC11Set!MedicaidUnitsPerPack)</Expr>
+            </Column>
+        </Worksheet>
+        <Worksheet DynamicEntryType="CalcWorksheet" name="DIR_12MNDC9Sum" UsageType="FORMULA" drivingWorksheet="origNDC9LinkNDC11">
+            <GroupingExpression>origNDC9LinkNDC11!origNDC9Id</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="ndc9id"/>
+                <Expr>origNDC9LinkNDC11!origNDC9Id</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>sum(DIR_12MSum!amt)</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="inv_qty" displayName="Quantity" type="decimal">
+                <Expr>sum(DIR_12MSum!inv_qty)</Expr>
+            </Column>
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="CalcWorksheet" name="INDSum" drivingWorksheet="IND" Ndc9LevelWorksheetName="INDNDC9Sum">
+            <GroupingExpression>IND!itemId</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="itemId"/>
+                <Expr>IND!itemId</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>sum(EndPeriodWACList!amt * (1 - [$AssumedPromptPayDiscount]) * IND!inv_qty)</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="inv_qty" displayName="Quantity" type="decimal">
+                <Expr>sum(IND!inv_qty * NDC11Set!MedicaidUnitsPerPack)</Expr>
+            </Column>
+        </Worksheet>
+        <Worksheet DynamicEntryType="CalcWorksheet" name="INDNDC9Sum" UsageType="FORMULA" drivingWorksheet="origNDC9LinkNDC11">
+            <GroupingExpression>origNDC9LinkNDC11!origNDC9Id</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="ndc9id"/>
+                <Expr>origNDC9LinkNDC11!origNDC9Id</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>sum(INDSum!amt)</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="inv_qty" displayName="Quantity" type="decimal">
+                <Expr>sum(INDSum!inv_qty)</Expr>
+            </Column>
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="CalcWorksheet" name="IND_12MSum" drivingWorksheet="IND_12M" Ndc9LevelWorksheetName="IND_12MNDC9Sum">
+            <GroupingExpression>IND_12M!itemId</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="itemId"/>
+                <Expr>IND_12M!itemId</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>sum(EndPeriodWACList!amt * (1 - [$AssumedPromptPayDiscount]) * IND_12M!inv_qty)</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="inv_qty" displayName="Quantity" type="decimal">
+                <Expr>sum(IND_12M!inv_qty * NDC11Set!MedicaidUnitsPerPack)</Expr>
+            </Column>
+        </Worksheet>
+        <Worksheet DynamicEntryType="CalcWorksheet" name="IND_12MNDC9Sum" UsageType="FORMULA" drivingWorksheet="origNDC9LinkNDC11">
+            <GroupingExpression>origNDC9LinkNDC11!origNDC9Id</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="ndc9id"/>
+                <Expr>origNDC9LinkNDC11!origNDC9Id</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>sum(IND_12MSum!amt)</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="inv_qty" displayName="Quantity" type="decimal">
+                <Expr>sum(IND_12MSum!inv_qty)</Expr>
+            </Column>
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="CalcWorksheet" name="XREBSum" drivingWorksheet="XREB" Ndc9LevelWorksheetName="XREBNDC9Sum">
+            <GroupingExpression>XREB!itemId</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="itemId"/>
+                <Expr>XREB!itemId</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>sum(EndPeriodWACList!amt * (1 - [$AssumedPromptPayDiscount]) * XREB!inv_qty)</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="inv_qty" displayName="Quantity" type="decimal">
+                <Expr>sum(XREB!inv_qty*NDC11Set!MedicaidUnitsPerPack)</Expr>
+            </Column>
+        </Worksheet>
+        <Worksheet DynamicEntryType="CalcWorksheet" name="XREBNDC9Sum" UsageType="FORMULA" drivingWorksheet="origNDC9LinkNDC11">
+            <GroupingExpression>origNDC9LinkNDC11!origNDC9Id</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="ndc9id"/>
+                <Expr>origNDC9LinkNDC11!origNDC9Id</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>sum(XREBSum!amt)</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="inv_qty" displayName="Quantity" type="decimal">
+                <Expr>sum(XREBSum!inv_qty)</Expr>
+            </Column>
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="CalcWorksheet" name="XREB_12MSum" drivingWorksheet="XREB_12M" Ndc9LevelWorksheetName="XREB_12MNDC9Sum">
+            <GroupingExpression>XREB_12M!itemId</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="itemId"/>
+                <Expr>XREB_12M!itemId</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>sum(EndPeriodWACList!amt * (1 - [$AssumedPromptPayDiscount]) * XREB_12M!inv_qty)</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="inv_qty" displayName="Quantity" type="decimal">
+                <Expr>sum(XREB_12M!inv_qty*NDC11Set!MedicaidUnitsPerPack)</Expr>
+            </Column>
+        </Worksheet>
+        <Worksheet DynamicEntryType="CalcWorksheet" name="XREB_12MNDC9Sum" UsageType="FORMULA" drivingWorksheet="origNDC9LinkNDC11">
+            <GroupingExpression>origNDC9LinkNDC11!origNDC9Id</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="ndc9id"/>
+                <Expr>origNDC9LinkNDC11!origNDC9Id</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>sum(XREB_12MSum!amt)</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="inv_qty" displayName="Quantity" type="decimal">
+                <Expr>sum(XREB_12MSum!inv_qty)</Expr>
+            </Column>
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="CalcWorksheet" name="CHBSum" drivingWorksheet="CHB" Ndc9LevelWorksheetName="CHBNDC9Sum">
+            <GroupingExpression>CHB!itemId</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="itemId"/>
+                <Expr>CHB!itemId</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>sum(CHB!paid_chgbk_amt)</Expr>
+            </Column>
+        </Worksheet>
+        <Worksheet DynamicEntryType="CalcWorksheet" name="CHBNDC9Sum" UsageType="FORMULA" drivingWorksheet="origNDC9LinkNDC11">
+            <GroupingExpression>origNDC9LinkNDC11!origNDC9Id</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="ndc9id"/>
+                <Expr>origNDC9LinkNDC11!origNDC9Id</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>sum(CHBSum!amt)</Expr>
+            </Column>
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="CalcWorksheet" name="CHB_12MSum" drivingWorksheet="CHB_12M" Ndc9LevelWorksheetName="CHB_12MNDC9Sum">
+            <GroupingExpression>CHB_12M!itemId</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="itemId"/>
+                <Expr>CHB_12M!itemId</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>sum(CHB_12M!paid_chgbk_amt)</Expr>
+            </Column>
+        </Worksheet>
+        <Worksheet DynamicEntryType="CalcWorksheet" name="CHB_12MNDC9Sum" UsageType="FORMULA" drivingWorksheet="origNDC9LinkNDC11">
+            <GroupingExpression>origNDC9LinkNDC11!origNDC9Id</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="ndc9id"/>
+                <Expr>origNDC9LinkNDC11!origNDC9Id</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>sum(CHB_12MSum!amt)</Expr>
+            </Column>
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="CalcWorksheet" name="CUSSum" drivingWorksheet="CUS" Ndc9LevelWorksheetName="CUSNDC9Sum">
+            <GroupingExpression>CUS!itemId</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="itemId"/>
+                <Expr>CUS!itemId</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>sum(CUS!financial_adjustment_amt)</Expr>
+            </Column>
+        </Worksheet>
+        <Worksheet DynamicEntryType="CalcWorksheet" name="CUSNDC9Sum" UsageType="FORMULA" drivingWorksheet="origNDC9LinkNDC11">
+            <GroupingExpression>origNDC9LinkNDC11!origNDC9Id</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="ndc9id"/>
+                <Expr>origNDC9LinkNDC11!origNDC9Id</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>sum(CUSSum!amt)</Expr>
+            </Column>
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="CalcWorksheet" name="REBSum" drivingWorksheet="REB" Ndc9LevelWorksheetName="REBNDC9Sum">
+            <GroupingExpression>REB!itemId</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="itemId"/>
+                <Expr>REB!itemId</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>sum(REB!rebate_payment_amt)</Expr>
+            </Column>
+        </Worksheet>
+        <Worksheet DynamicEntryType="CalcWorksheet" name="REBNDC9Sum" UsageType="FORMULA" drivingWorksheet="origNDC9LinkNDC11">
+            <GroupingExpression>origNDC9LinkNDC11!origNDC9Id</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="ndc9id"/>
+                <Expr>origNDC9LinkNDC11!origNDC9Id</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>sum(REBSum!amt)</Expr>
+            </Column>
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="CalcWorksheet" name="REB_12MSum" drivingWorksheet="REB_12M" Ndc9LevelWorksheetName="REB_12MNDC9Sum">
+            <GroupingExpression>REB_12M!itemId</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="itemId"/>
+                <Expr>REB_12M!itemId</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>sum(REB_12M!rebate_payment_amt)</Expr>
+            </Column>
+        </Worksheet>
+        <Worksheet DynamicEntryType="CalcWorksheet" name="REB_12MNDC9Sum" UsageType="FORMULA" drivingWorksheet="origNDC9LinkNDC11">
+            <GroupingExpression>origNDC9LinkNDC11!origNDC9Id</GroupingExpression>
+            <Column DynamicEntryType="CalcColumn" name="itemId" displayName="Item ID" type="integer">
+                <Dimension name="ndc9id"/>
+                <Expr>origNDC9LinkNDC11!origNDC9Id</Expr>
+            </Column>
+            <Column DynamicEntryType="CalcColumn" name="amt" displayName="Amount" type="decimal">
+                <Expr>sum(REB_12MSum!amt)</Expr>
+            </Column>
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="ResultWorksheet" name="NDC11" description="NDC11 Workbook Result Components" UsageType="VALIDATION" drivingWorksheet="NDC11SetAMPAlgorithm" Ndc9LevelWorksheetName="NDC9">
+            <Column DynamicEntryType="ResultColumn" name="itemID" type="itemid" displayName="Item">
+                <Dimension name="itemId"/>
+                <Expr>NDC11SetAMPAlgorithm!itemId</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="ndc" type="ndc" displayName="NDC">
+                <Expr>NDC11SetAMPAlgorithm!NDC11</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="calcprice" type="calcprice" DisplayStyle="BOTH" DisplayOrderNum="20" displayName="AMP $/Unit">
+                <!-- Roll down value from the NDC9 level-->
+                <Expr>NDC9!calcprice</Expr>
+            </Column>
+
+            <Column DynamicEntryType="ResultColumn" name="amt1"  type="amount" DisplayStyle="BOTH" DisplayOrderNum="105" displayName="AMP $/Unit (unrounded)">
+                <Expr>if( OR( NDC11!algorithm="AMP.ACTIVE", NDC11!algorithm="AMP.TERMINATED" ), 
+                          if( NDC11!qty1=0, 0, NDC11!amt2/NDC11!qty1),
+                          if( NDC11!algorithm="AMP.TRANSFERRED", NDC11SetAMPAlgorithm!AcquiredAMP ) )
+                </Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt2"  type="amount" DisplayStyle="DETAIL" DisplayOrderNum="210" displayName="Net $">
+                <Expr> <![CDATA[NDC11!amt3 - NDC11!amt4 - NDC11!amt5 - NDC11!amt6 - NDC11!amt7 - NDC11!amt8]]> </Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt3"  type="amount" DisplayStyle="DETAIL" DisplayOrderNum="220" displayName="Direct Sales $" WorksheetName="DIR">
+                <Expr>DIRSum!amt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt4"  type="amount" DisplayStyle="DETAIL" DisplayOrderNum="230" displayName="Indirect Sales $" WorksheetName="IND">
+                <Expr>INDSum!amt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt5"  type="amount" DisplayStyle="DETAIL" DisplayOrderNum="240" displayName="Excludable Rebates $" WorksheetName="XREB">
+                <Expr>XREBSum!amt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt6"  type="amount" DisplayStyle="DETAIL" DisplayOrderNum="250" displayName="Chargebacks $" WorksheetName="CHB">
+                <Expr>CHBSum!amt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt7"  type="amount" DisplayStyle="DETAIL" DisplayOrderNum="260" displayName="Rebates $" WorksheetName="REB">
+                <Expr>REBSum!amt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt8"  type="amount" DisplayStyle="DETAIL" DisplayOrderNum="270" displayName="Financial Adjustments $" WorksheetName="CUS">
+                <Expr>CUSSum!amt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt9"  type="amount" DisplayStyle="BOTH"   DisplayOrderNum="110" displayName="Last Filed AMP $/Unit">
+                <Expr>priorMonthlyAMPList!amt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt11" type="amount" DisplayStyle="DETAIL" DisplayOrderNum="415" displayName="PPD $">
+                <Expr>DIRSum!ppAmt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt12" type="amount" DisplayStyle="DETAIL" DisplayOrderNum="365" displayName="12 Month Direct Sales $" WorksheetName="DIR_12M">
+                <Expr>DIR_12MSum!amt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt13" type="amount" DisplayStyle="DETAIL" DisplayOrderNum="375" displayName="12 Month Indirect Sales $" WorksheetName="IND_12M">
+                <Expr>IND_12MSum!amt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt14" type="amount" DisplayStyle="DETAIL" DisplayOrderNum="385" displayName="12 Month Excludable Rebates $" WorksheetName="XREB_12M">
+                <Expr>XREB_12MSum!amt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt15" type="amount" DisplayStyle="DETAIL" DisplayOrderNum="395" displayName="12 Month Chargebacks $" WorksheetName="CHB_12M">
+                <Expr>CHB_12MSum!amt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt16" type="amount" DisplayStyle="DETAIL" DisplayOrderNum="405" displayName="12 Month Rebates $" WorksheetName="REB_12M">
+                <Expr>REB_12MSum!amt</Expr>
+            </Column>
+
+            <Column DynamicEntryType="ResultColumn" name="qty1" type="quantity" DisplayStyle="DETAIL" DisplayOrderNum="300" displayName="Net AMP Units">
+                <Expr>NDC11!qty2 - NDC11!qty3 - NDC11!qty4</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="qty2" type="quantity" DisplayStyle="DETAIL" DisplayOrderNum="310" displayName="Direct Sales Units" WorksheetName="DIR">
+                <Expr>DIRSum!inv_qty</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="qty3" type="quantity" DisplayStyle="DETAIL" DisplayOrderNum="320" displayName="Indirect Sales Units" WorksheetName="IND">
+                <Expr>INDSum!inv_qty</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="qty4" type="quantity" DisplayStyle="DETAIL" DisplayOrderNum="330" displayName="Excludable Rebates Units" WorksheetName="XREB">
+                <Expr>XREBSum!inv_qty</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="qty5" type="quantity" DisplayStyle="DETAIL" DisplayOrderNum="370" displayName="12 Month Direct Sales Units" WorksheetName="DIR_12M">
+                <Expr>DIR_12MSum!inv_qty</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="qty6" type="quantity" DisplayStyle="DETAIL" DisplayOrderNum="380" displayName="12 Month Indirect Sales Units" WorksheetName="IND_12M">
+                <Expr>IND_12MSum!inv_qty</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="qty7" type="quantity" DisplayStyle="DETAIL" DisplayOrderNum="390" displayName="12 Month Excludable Rebates Units" WorksheetName="XREB_12M">
+                <Expr>XREB_12MSum!inv_qty</Expr>
+            </Column>
+
+            <Column DynamicEntryType="ResultColumn" name="dec1" type="decimal" DisplayStyle="DETAIL" DisplayOrderNum="340" displayName="Indirect Sales Smoothing Ratio">
+                <Expr>if(DIR_12MSum!inv_qty = 0, 1, DIRSum!inv_qty/DIR_12MSum!inv_qty)</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="dec2" type="decimal" DisplayStyle="DETAIL" DisplayOrderNum="350" displayName="Chargeback Smoothing Ratio">
+                <Expr>if(( DIR_12MSum!amt - IND_12MSum!amt - XREB_12MSum!amt ) = 0, 1, ( DIRSum!amt - IND_12MSum!amt * NDC11!dec1 - XREB_12MSum!amt * NDC11!dec4 ) / ( DIR_12MSum!amt - IND_12MSum!amt - XREB_12MSum!amt ))</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="dec3" type="decimal" DisplayStyle="DETAIL" DisplayOrderNum="360" displayName="Rebates Smoothing Ratio">
+                <Expr>if(( DIR_12MSum!amt - IND_12MSum!amt - XREB_12MSum!amt ) = 0, 1, ( DIRSum!amt - IND_12MSum!amt * NDC11!dec1 - XREB_12MSum!amt * NDC11!dec4 ) / ( DIR_12MSum!amt - IND_12MSum!amt - XREB_12MSum!amt ))</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="dec4" type="decimal" DisplayStyle="DETAIL" DisplayOrderNum="345" displayName="Excludable Rebates Smoothing Ratio">
+                <Expr>if(DIR_12MSum!inv_qty = 0, 1, DIRSum!inv_qty/DIR_12MSum!inv_qty)</Expr>
+            </Column>
+
+            <Column DynamicEntryType="ResultColumn" name="algorithm" type="algorithm" DisplayStyle="BOTH" DisplayOrderNum="40" displayName="Algorithm">
+                <Expr>
+                    if(NDC11SetAMPAlgorithm!Status="3.AMP.TERMINATED", "AMP.TERMINATED",
+                    if(NDC11SetAMPAlgorithm!Status="2.AMP.ACTIVE", "AMP.ACTIVE",
+                    if(NDC11SetAMPAlgorithm!Status="4.AMP.TRANSFERRED", "AMP.TRANSFERRED"
+                    )))
+                </Expr>
+            </Column>
+
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="ResultWorksheet" name="NDC9" description="NDC9 Workbook Result Components" UsageType="FORMULA|VALIDATION" drivingWorksheet="NDC9SetAMPAlgorithm">
+            <Column DynamicEntryType="ResultColumn" name="itemID" type="itemid" displayName="Item">
+                <Dimension name="ndc9id"/>
+                <Expr>NDC9SetAMPAlgorithm!itemId</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="ndc" type="ndc" displayName="NDC">
+                <Expr>NDC9SetAMPAlgorithm!NDC9</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="calcprice" type="calcprice" DisplayStyle="BOTH" DisplayOrderNum="20" displayName="AMP $/Unit">
+                <Expr>round(NDC9!amt1,6)</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="algorithm" type="algorithm" DisplayStyle="BOTH" DisplayOrderNum="40" displayName="Algorithm">
+                <Expr>NDC9SetAMPAlgorithm!Status</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt1"  type="amount" DisplayStyle="BOTH" DisplayOrderNum="105" displayName="AMP $/Unit (unrounded)">
+                <Expr>if( OR( NDC9!algorithm="AMP.ACTIVE", NDC9!algorithm="AMP.TERMINATED" ), 
+                          if( NDC9!qty1=0, 0, NDC9!amt2/NDC9!qty1),
+                          if( NDC9!algorithm="AMP.TRANSFERRED", NDC9SetAMPAlgorithm!AcquiredAMP ) )
+                </Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt2"  type="amount" DisplayStyle="DETAIL" DisplayOrderNum="210" displayName="Net $">
+                <Expr> <![CDATA[NDC9!amt3 - NDC9!amt4 - NDC9!amt5 - NDC9!amt6 - NDC9!amt7 - NDC9!amt8]]> </Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt3"  type="amount" DisplayStyle="DETAIL" DisplayOrderNum="220" displayName="Direct Sales $" WorksheetName="DIR">
+                <Expr>DIRNDC9Sum!amt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt4"  type="amount" DisplayStyle="DETAIL" DisplayOrderNum="230" displayName="Indirect Sales $" WorksheetName="IND">
+                <Expr>INDNDC9Sum!amt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt5"  type="amount" DisplayStyle="DETAIL" DisplayOrderNum="240" displayName="Excludable Rebates $" WorksheetName="XREB">
+                <Expr>XREBNDC9Sum!amt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt6"  type="amount" DisplayStyle="DETAIL" DisplayOrderNum="250" displayName="Chargebacks $" WorksheetName="CHB">
+                <Expr>CHBNDC9Sum!amt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt7"  type="amount" DisplayStyle="DETAIL" DisplayOrderNum="260" displayName="Rebates $" WorksheetName="REB">
+                <Expr>REBNDC9Sum!amt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt8"  type="amount" DisplayStyle="DETAIL" DisplayOrderNum="270" displayName="Financial Adjustments $" WorksheetName="CUS">
+                <Expr>CUSNDC9Sum!amt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt9"  type="amount" DisplayStyle="BOTH"   DisplayOrderNum="110" displayName="Last Filed AMP $/Unit">
+                <Expr>priorMonthlyAMPListNDC9!amt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt11" type="amount" DisplayStyle="DETAIL" DisplayOrderNum="415" displayName="PPD $">
+                <Expr>DIRNDC9Sum!ppAmt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt12" type="amount" DisplayStyle="DETAIL" DisplayOrderNum="365" displayName="12 Month Direct Sales $" WorksheetName="DIR_12M">
+                <Expr>DIR_12MNDC9Sum!amt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt13" type="amount" DisplayStyle="DETAIL" DisplayOrderNum="375" displayName="12 Month Indirect Sales $" WorksheetName="IND_12M">
+                <Expr>IND_12MNDC9Sum!amt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt14" type="amount" DisplayStyle="DETAIL" DisplayOrderNum="385" displayName="12 Month Excludable Rebates $" WorksheetName="XREB_12M">
+                <Expr>XREB_12MNDC9Sum!amt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt15" type="amount" DisplayStyle="DETAIL" DisplayOrderNum="395" displayName="12 Month Chargebacks $" WorksheetName="CHB_12M">
+                <Expr>CHB_12MNDC9Sum!amt</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="amt16" type="amount" DisplayStyle="DETAIL" DisplayOrderNum="405" displayName="12 Month Rebates $" WorksheetName="REB_12M">
+                <Expr>REB_12MNDC9Sum!amt</Expr>
+            </Column>
+
+            <Column DynamicEntryType="ResultColumn" name="qty1" type="quantity" DisplayStyle="DETAIL" DisplayOrderNum="300" displayName="Net Units">
+                <Expr>NDC9!qty2 - NDC9!qty3 - NDC9!qty4</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="qty2" type="quantity" DisplayStyle="DETAIL" DisplayOrderNum="310" displayName="Direct Sales Units" WorksheetName="DIR">
+                <Expr>DIRNDC9Sum!inv_qty</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="qty3" type="quantity" DisplayStyle="DETAIL" DisplayOrderNum="320" displayName="Indirect Sales Units" WorksheetName="IND">
+                <Expr>INDNDC9Sum!inv_qty</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="qty4" type="quantity" DisplayStyle="DETAIL" DisplayOrderNum="330" displayName="Excludable Rebates Units" WorksheetName="XREB">
+                <Expr>XREBNDC9Sum!inv_qty</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="qty5" type="quantity" DisplayStyle="DETAIL" DisplayOrderNum="370" displayName="12 Month Direct Sales Units" WorksheetName="DIR_12M">
+                <Expr>DIR_12MNDC9Sum!inv_qty</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="qty6" type="quantity" DisplayStyle="DETAIL" DisplayOrderNum="380" displayName="12 Month Indirect Sales Units" WorksheetName="IND_12M">
+                <Expr>IND_12MNDC9Sum!inv_qty</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="qty7" type="quantity" DisplayStyle="DETAIL" DisplayOrderNum="390" displayName="12 Month Excludable Rebates Units" WorksheetName="XREB_12M">
+                <Expr>XREB_12MNDC9Sum!inv_qty</Expr>
+            </Column>
+
+            <Column DynamicEntryType="ResultColumn" name="dec1" type="decimal" DisplayStyle="DETAIL" DisplayOrderNum="340" displayName="Indirect Sales Smoothing Ratio">
+                <Expr>if(DIR_12MNDC9Sum!inv_qty = 0, 1, DIRNDC9Sum!inv_qty/DIR_12MNDC9Sum!inv_qty)</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="dec2" type="decimal" DisplayStyle="DETAIL" DisplayOrderNum="350" displayName="Chargeback Smoothing Ratio">
+                <Expr>if(( DIR_12MNDC9Sum!amt - IND_12MNDC9Sum!amt - XREB_12MNDC9Sum!amt ) = 0, 1, ( DIRNDC9Sum!amt - IND_12MNDC9Sum!amt * NDC9!dec1 - XREB_12MNDC9Sum!amt * NDC9!dec4 ) / ( DIR_12MNDC9Sum!amt - IND_12MNDC9Sum!amt - XREB_12MNDC9Sum!amt ))</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="dec3" type="decimal" DisplayStyle="DETAIL" DisplayOrderNum="360" displayName="Rebates Smoothing Ratio">
+                <Expr>if(( DIR_12MNDC9Sum!amt - IND_12MNDC9Sum!amt - XREB_12MNDC9Sum!amt ) = 0, 1, ( DIRNDC9Sum!amt - IND_12MNDC9Sum!amt * NDC9!dec1 - XREB_12MNDC9Sum!amt * NDC9!dec4 ) / ( DIR_12MNDC9Sum!amt - IND_12MNDC9Sum!amt - XREB_12MNDC9Sum!amt ))</Expr>
+            </Column>
+            <Column DynamicEntryType="ResultColumn" name="dec4" type="decimal" DisplayStyle="DETAIL" DisplayOrderNum="345" displayName="Excludable Rebates Smoothing Ratio">
+                <Expr>if(DIR_12MNDC9Sum!inv_qty = 0, 1, DIRNDC9Sum!inv_qty/DIR_12MNDC9Sum!inv_qty)</Expr>
+            </Column>
+        </Worksheet>
+
+        <!-- These Worksheets are used to include the medicaid in-eligible products in NDC9 calc results and drilldowns -->
+
+        <Worksheet DynamicEntryType="SQLWorksheet" name="NDC11SetActiveAll">
+            <Query><![CDATA[
+            [$NDC11SetAMPProdSetSelect]
+            '2.AMP.ACTIVE' as status
+            [$NDC11SetAMPProdSetFrom]
+                AND ( base11.shelf_life_exp_date is null  OR
+                      base11.shelf_life_exp_date >=  [$PeriodStart] )
+                AND ( base11.divestiture_date is null  OR
+                      base11.divestiture_date >=  [$PeriodStart] )
+                AND ( base11.pkg_size_intro_date is null  OR
+                      base11.pkg_size_intro_date <= [$PeriodEndTimeStamp] )
+                AND ( [$ProductLife] >= [$OneCalcPeriod] OR ( [$ProductLife] < [$OneCalcPeriod] AND base11.acquisition_date is null ) )
+            ]]></Query>
+            <Column DynamicEntryType="SQLColumn"  name="itemId" type="integer" dbColumn="ndc11_id">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="SQLColumn"  name="NDC9Id" type="integer" dbColumn="ndc9_id">
+                <Dimension name="ndc9id"/>
+            </Column>
+            <Column DynamicEntryType="SQLColumn"  name="NDC11" type="string" dbColumn="ndc11"/>
+            <Column DynamicEntryType="SQLColumn"  name="NDC9" type="string" dbColumn="ndc9"/>
+            <Column DynamicEntryType="SQLColumn"  name="Status" type="string" dbColumn="status"/>
+            <Column DynamicEntryType="SQLColumn"  name="MedicaidUnitPerPack" displayName="CMS Units Per Pack" type="decimal" dbColumn="medicaid_upp"/>
+            <Column DynamicEntryType="SQLColumn"  name="AcquiredAMP" type="decimal" dbColumn="acquired_amp"/>
+            <Column DynamicEntryType="SQLColumn"  name="SpecialItemNumber" displayName="Special Item Number" type="string" dbColumn="spl_item_num"/>
+            <Column DynamicEntryType="SQLColumn"  name="DrugCategory" displayName="Drug Category" type="string" dbColumn="drug_category"/>
+            <Column DynamicEntryType="SQLColumn"  name="GenericBrandType" displayName="Generic/Brand" type="string" dbColumn="gnr_brnd_type"/>
+            <CalcFilter><![CDATA[in(NDC11SetActiveAll!NDC9Id ,NDC11Set!NDC9Id)]]></CalcFilter>
+            <CalcFilter><![CDATA[ in( NDC11SetActiveAll!itemId, ProductFilter!itemId ) ]]></CalcFilter>
+        </Worksheet>
+        <Worksheet DynamicEntryType="SQLWorksheet" name="NDC11SetTransferredAll">
+            <Query><![CDATA[
+            [$NDC11SetAMPProdSetSelect]
+            '4.AMP.TRANSFERRED' as status
+            [$NDC11SetAMPProdSetFrom]
+                AND ( base11.shelf_life_exp_date is null  OR
+                      base11.shelf_life_exp_date >=  [$PeriodStart] )
+                AND ( base11.divestiture_date is null  OR
+                      base11.divestiture_date >=  [$PeriodStart] )
+                AND ( base11.pkg_size_intro_date is null  OR
+               		  base11.pkg_size_intro_date <= [$PeriodEndTimeStamp] )
+                /* product acquired with product life between 0 and 1 month */
+                AND ( [$ProductLife] < [$OneCalcPeriod] AND base11.acquisition_date is not null )
+            ]]></Query>
+            <Column DynamicEntryType="SQLColumn"  name="itemId" type="integer" dbColumn="ndc11_id">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="SQLColumn"  name="NDC9Id" type="integer" dbColumn="ndc9_id">
+                <Dimension name="ndc9id"/>
+            </Column>
+            <Column DynamicEntryType="SQLColumn"  name="NDC11" type="string" dbColumn="ndc11"/>
+            <Column DynamicEntryType="SQLColumn"  name="NDC9" type="string" dbColumn="ndc9"/>
+            <Column DynamicEntryType="SQLColumn"  name="Status" type="string" dbColumn="status"/>
+            <Column DynamicEntryType="SQLColumn"  name="MedicaidUnitPerPack" displayName="CMS Units Per Pack" type="decimal" dbColumn="medicaid_upp"/>
+            <Column DynamicEntryType="SQLColumn"  name="AcquiredAMP" type="decimal" dbColumn="acquired_amp"/>
+            <Column DynamicEntryType="SQLColumn"  name="SpecialItemNumber" displayName="Special Item Number" type="string" dbColumn="spl_item_num"/>
+            <Column DynamicEntryType="SQLColumn"  name="DrugCategory" displayName="Drug Category" type="string" dbColumn="drug_category"/>
+            <Column DynamicEntryType="SQLColumn"  name="GenericBrandType" displayName="Generic/Brand" type="string" dbColumn="gnr_brnd_type"/>
+            <CalcFilter><![CDATA[ in( NDC11SetTransferredAll!NDC9Id, NDC11Set!NDC9Id ) ]]></CalcFilter>
+            <CalcFilter><![CDATA[ in( NDC11SetTransferredAll!itemId, ProductFilter!itemId ) ]]></CalcFilter>
+            <CalcFilter><![CDATA[ not(in( NDC11SetTransferredAll!NDC9Id, NDC11SetActiveAll!NDC9Id )) ]]></CalcFilter>
+            <CalcFilter><![CDATA[ not(in( NDC11SetTransferredAll!NDC9Id, NDC11SetExpiredAll!NDC9Id )) ]]></CalcFilter>
+        </Worksheet>
+        <Worksheet DynamicEntryType="SQLWorksheet" name="NDC11SetExpiredAll">
+            <Query><![CDATA[
+            [$NDC11SetAMPProdSetSelect]
+            '3.AMP.TERMINATED' AS status
+            [$NDC11SetAMPProdSetFrom]
+                AND ( base11.shelf_life_exp_date >=  ADD_MONTHS([$PeriodStart], -12) )
+                AND (base11.shelf_life_exp_date < [$PeriodStart])
+                AND ( base11.divestiture_date is null  OR
+                      base11.divestiture_date >=  [$PeriodStart] )
+                AND ( base11.pkg_size_intro_date is null  OR
+                      base11.pkg_size_intro_date <= [$PeriodEndTimeStamp] )
+            ]]></Query>
+            <Column DynamicEntryType="SQLColumn"  name="itemId" type="integer" dbColumn="ndc11_id">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="SQLColumn"  name="NDC9Id" type="integer" dbColumn="ndc9_id">
+                <Dimension name="ndc9id"/>
+            </Column>
+            <Column DynamicEntryType="SQLColumn"  name="NDC11" type="string" dbColumn="ndc11"/>
+            <Column DynamicEntryType="SQLColumn"  name="NDC9" type="string" dbColumn="ndc9"/>
+            <Column DynamicEntryType="SQLColumn"  name="Status" type="string" dbColumn="status"/>
+            <Column DynamicEntryType="SQLColumn"  name="MedicaidUnitPerPack" displayName="CMS Units Per Pack" type="decimal" dbColumn="medicaid_upp"/>
+            <Column DynamicEntryType="SQLColumn"  name="AcquiredAMP" type="decimal" dbColumn="acquired_amp"/>
+            <Column DynamicEntryType="SQLColumn"  name="SpecialItemNumber" displayName="Special Item Number" type="string" dbColumn="spl_item_num"/>
+            <Column DynamicEntryType="SQLColumn"  name="DrugCategory" displayName="Drug Category" type="string" dbColumn="drug_category"/>
+            <Column DynamicEntryType="SQLColumn"  name="GenericBrandType" displayName="Generic/Brand" type="string" dbColumn="gnr_brnd_type"/>
+            <CalcFilter><![CDATA[ in( NDC11SetExpiredAll!itemId, ProductFilter!itemId ) ]]></CalcFilter>
+        </Worksheet>
+
+        <Worksheet DynamicEntryType="UnionWorksheet" name="NDC11SetAll" UsageType="DATA_SOURCE" displayName="NDC11 Product Information" distinct="true">
+            <Column DynamicEntryType="UnionColumn" name="itemId" type="integer">
+                <Dimension name="itemId"/>
+            </Column>
+            <Column DynamicEntryType="UnionColumn" name="NDC9Id" type="integer">
+                <Dimension name="ndc9id"/>
+            </Column>
+            <Column DynamicEntryType="UnionColumn" name="NDC11" type="string"/>
+            <Column DynamicEntryType="UnionColumn" name="NDC9" type="string"/>
+            <Column DynamicEntryType="UnionColumn" name="Status" displayName="Product Set Algorithm" type="string"/>
+            <Column DynamicEntryType="UnionColumn" name="MedicaidUnitPerPack" displayName="CMS Units Per Pack" type="decimal"/>
+            <Column DynamicEntryType="UnionColumn" name="AcquiredAMP" displayName="Acquired AMP" type="decimal"/>
+            <Column DynamicEntryType="UnionColumn" name="SpecialItemNumber" displayName="Special Item Number" type="string"/>
+            <Column DynamicEntryType="UnionColumn" name="DrugCategory" displayName="Drug Category" type="string"/>
+            <Column DynamicEntryType="UnionColumn" name="GenericBrandType" displayName="Generic/Brand" type="string"/>
+            <SubWorksheet name="NDC11SetActiveAll">
+                <Column DynamicEntryType="SubColumn" name="itemId"/>
+                <Column DynamicEntryType="SubColumn" name="NDC9Id"/>
+                <Column DynamicEntryType="SubColumn" name="NDC11"/>
+                <Column DynamicEntryType="SubColumn" name="NDC9"/>
+                <Column DynamicEntryType="SubColumn" name="Status"/>
+                <Column DynamicEntryType="SubColumn" name="MedicaidUnitPerPack"/>
+                <Column DynamicEntryType="SubColumn" name="AcquiredAMP"/>
+                <Column DynamicEntryType="SubColumn" name="SpecialItemNumber"/>
+                <Column DynamicEntryType="SubColumn" name="DrugCategory"/>
+                <Column DynamicEntryType="SubColumn" name="GenericBrandType"/>
+            </SubWorksheet>
+            <SubWorksheet name="NDC11SetExpiredAll">
+                <Column DynamicEntryType="SubColumn" name="itemId"/>
+                <Column DynamicEntryType="SubColumn" name="NDC9Id"/>
+                <Column DynamicEntryType="SubColumn" name="NDC11"/>
+                <Column DynamicEntryType="SubColumn" name="NDC9"/>
+                <Column DynamicEntryType="SubColumn" name="Status"/>
+                <Column DynamicEntryType="SubColumn" name="MedicaidUnitPerPack"/>
+                <Column DynamicEntryType="SubColumn" name="AcquiredAMP"/>
+                <Column DynamicEntryType="SubColumn" name="SpecialItemNumber"/>
+                <Column DynamicEntryType="SubColumn" name="DrugCategory"/>
+                <Column DynamicEntryType="SubColumn" name="GenericBrandType"/>
+            </SubWorksheet>
+            <SubWorksheet name="NDC11SetTransferredAll">
+                <Column DynamicEntryType="SubColumn" name="itemId"/>
+                <Column DynamicEntryType="SubColumn" name="NDC9Id"/>
+                <Column DynamicEntryType="SubColumn" name="NDC11"/>
+                <Column DynamicEntryType="SubColumn" name="NDC9"/>
+                <Column DynamicEntryType="SubColumn" name="Status"/>
+                <Column DynamicEntryType="SubColumn" name="MedicaidUnitPerPack"/>
+                <Column DynamicEntryType="SubColumn" name="AcquiredAMP"/>
+                <Column DynamicEntryType="SubColumn" name="SpecialItemNumber"/>
+                <Column DynamicEntryType="SubColumn" name="DrugCategory"/>
+                <Column DynamicEntryType="SubColumn" name="GenericBrandType"/>
+            </SubWorksheet>
+        </Worksheet>
+
+    </PriceType>
+</Entries>
