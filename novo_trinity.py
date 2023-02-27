@@ -27,6 +27,6 @@ for key, value in input_formula.items():
         if AMP.search_nodes(name = key)[0] is not NULL :
             fill_tree(AMP.search_nodes(name = key)[0], value)
     except:
-        print("node {} doesn't exist in tree".format(key)
+        print("node {} doesn't exist in tree".format(key))
 
 print(AMP.get_ascii(show_internal=True))
